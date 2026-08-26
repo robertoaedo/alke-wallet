@@ -1,0 +1,28 @@
+/* Paleta de colores personalizada Fintech */
+:root {
+    --primary-color: #0d6efd;
+    --dark-bg: #f8f9fa;
+}
+
+body {
+    background-color: var(--dark-bg);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.bg-gradient-primary {
+    background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+}
+
+.action-card {
+    transition: transform 0.2s ease, shadow 0.2s ease;
+    border-radius: 1rem !important;
+}
+
+.action-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.text-mutedSmall {
+    font-size: 0.875rem;
+}

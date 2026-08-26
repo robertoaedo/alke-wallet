@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alke Wallet - Enviar Dinero</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-primary shadow-sm mb-4">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="menu.html">← Volver al Menú</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row g-4 justify-content-center">
+            <!-- Formulario de Transferencia -->
+            <div class="col-md-6">
+                <div class="card shadow-sm border-0 rounded-4 p-4">
+                    <h3 class="text-primary fw-bold mb-3">Enviar Dinero</h3>
+                    <p class="text-muted">Saldo disponible: <strong id="balanceDisplay">$0.00</strong></p>
+
+                    <div id="sendAlert" class="alert d-none" role="alert"></div>
+
+                    <form id="sendMoneyForm">
+                        <div class="mb-3">
+                            <label for="contactSearch" class="form-label">Buscar / Seleccionar Contacto</label>
+                            <input type="text" class="form-control" id="contactSearch" placeholder="Escribe el nombre del contacto..." list="contactListOptions" required>
+                            <datalist id="contactListOptions">
+                                <!-- Se llena dinámicamente -->
+                            </datalist>
+                        </div>
+                        <div class="mb-3">
+                            <label for="sendAmount" class="form-label">Monto a transferir ($)</label>
+                            <input type="number" step="0.01" min="1" class="form-control form-control-lg" id="sendAmount" placeholder="0.00" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 btn-lg rounded-pill">Transferir</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Gestión de Contactos -->
+            <div class="col-md-5">
+                <div class="card shadow-sm border-0 rounded-4 p-4">
+                    <h4 class="fw-bold mb-3">Agregar Nuevo Contacto</h4>
+                    <form id="addContactForm" class="mb-4">
+                        <div class="mb-2">
+                            <input type="text" class="form-control" id="newContactName" placeholder="Nombre completo" required>
+                        </div>
+                        <div class="mb-2">
+                            <input type="email" class="form-control" id="newContactEmail" placeholder="Correo electrónico" required>
+                        </div>
+                        <button type="submit" class="btn btn-outline-primary w-100 rounded-pill">Guardar Contacto</button>
+                    </form>
+
+                    <h5 class="fw-bold mb-2">Mis Contactos</h5>
+                    <ul class="list-group" id="contactsUI">
+                        <!-- Contactos guardados dinámicamente -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/wallet.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
